@@ -1,17 +1,16 @@
-package tests;
+package tests.junit;
 
-import org.junit.After;
-import org.junit.Before;
+import org.testng.annotations.*;
 import utils.DriverManager;
 
-public class BaseTest {
+public class TestNGBaseTest {
 
-    @Before
+    @BeforeClass
     public void setUp() {
         DriverManager.getDriver();
     }
 
-    @After
+    @AfterClass
     public void tearDown() {
         DriverManager.quitDriver();
     }
