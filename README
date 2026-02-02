@@ -1,0 +1,38 @@
+Links:
+https://mvnrepository.com
+
+TestNG (TDD) - functional - https://www.youtube.com/playlist?list=PLUDwpEzHYYLsWENabqeETzgPLbmwqhM45
+- Dependencies in pom.xml
+- Settings Plugins - Add TestNG Plugin
+- Settings Plugins - Add Create TestNG XML Plugin
+- Run - Edit configurations for testng.xml file and add listeners - EmailableReporter and FailedReporter
+- Annotations - @Test < @Before/AfterMethod < @Before/AfterClass < @Before/AfterTest < @Before/AfterSuite
+- Priority - (priority = 1) - default 0
+- Enabling/Disabling - (enabled = false) - default true
+- Always Run - (alwaysRun = true) - default false
+- Dependency - (dependsOnMethods = {"methodName1", "methodName2"})
+- Groups - (groups = {"sanity", "regression"})
+- Parameters - @Parameters({"browser", "url"})
+- Data Provider method - @DataProvider(name = "LoginDataProvider"), @Test(dataProvider = "LoginDataProvider")
+- Data Provider method - @DataProvider(name = "LoginDataProvider"), @Test(dataProvider = "LoginDataProvider", dataProviderClass = CustomDataProvider.class)
+- Parallel Tests - <suite name="Parallel Suite" parallel = "tests/classes/methods/instances" thread-count="3">
+- Listeners - ITestListener - @Listeners(CustomListener.class) above test class or in testng.xml <listeners><listener class-name="tests.testng.CustomListener"/></listeners>
+
+Cucumber (BDD) - acceptance - https://www.youtube.com/playlist?list=PLUDwpEzHYYLuOleK8iPl6kc2UbXGvllBY
+- Dependencies in pom.xml
+- Settings Plugins - Add Cucumber Plugin and junit/hamcrest libraries in project structure/modules/dependencies/libraries/java/ide/lib
+- Feature File - example.feature - (gherkin: Feature: Background: Scenario: Scenario Outline: Examples: Given When Then And)
+- Step definition - @Given("I launch chrome browser"),  @When("I open home page"), @Then("I verify that the logo is present on page"), @And("Close browser")
+- Test runner - above test class
+@RunWith(Cucumber.class),
+@CucumberOptions(
+        features = {"C://Users//ajsif//IdeaProjects//project-java//src//test//features//Login.feature",
+                    "C://Users//ajsif//IdeaProjects//project-java//src//test//features//PracticeForm.feature"},
+        glue = "stepDefinitions",
+        dryRun = false,
+        monochrome = true,
+        plugin = {"pretty", "html:test-output"},
+        tags = "@single, @driven"
+)
+- Annotations - Scenario @Before @After - Step @BeforeStep @AfterStep
+- Tags @sanity, @regression, etc. put before scenarios in the feature file
