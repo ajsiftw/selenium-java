@@ -9,9 +9,7 @@ import org.junit.runner.RunWith;
         features = "classpath:features",
         glue = {"steps", "hooks"},
         monochrome = true,
-        plugin = {"pretty", "html:output/reports/cucumber-junit-report.html"}
+        plugin = {"pretty", "html:output/reports/cucumber-junit4-report.html"}
 )
 
-public class CucumberJUnitRunner {
-
-}
+public class CucumberJUnit4Runner {}

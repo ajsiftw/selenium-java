@@ -4,11 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
     <groupId>main</groupId>
     <artifactId>selenium-java</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>selenium-java</name>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,6 +26,7 @@
         <restassured.version>5.4.0</restassured.version>
         <jacksondatabind.version>2.17.0</jacksondatabind.version>
     </properties>
+
 
     <dependencies>
         <!-- Selenium -->
@@ -46,14 +49,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
         <!-- JUnit 5 -->
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter</artifactId>
-                    <version>${junit.jupiter.version}</version>
-                    <scope>test</scope>
-                </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <!-- Cucumber Java -->
         <dependency>
@@ -68,13 +71,22 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Cucumber JUnit -->
+        <!-- Cucumber JUnit4 -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Cucumber JUnit5 -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
         <!-- Log4j2 Core-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -93,6 +105,8 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
+
         <!-- WebDriver Manager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -113,6 +127,7 @@
             <version>${jacksondatabind.version}</version>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
@@ -143,5 +158,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
